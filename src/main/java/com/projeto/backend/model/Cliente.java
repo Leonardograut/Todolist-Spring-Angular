@@ -77,8 +77,6 @@ public class Cliente {
     }
 
     
-
-    
     public Cliente(long id, String nome, int idade, String email, String ciddade) {
         this.id = id;
         this.nome = nome;
