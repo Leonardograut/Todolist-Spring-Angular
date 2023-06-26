@@ -28,7 +28,7 @@ public class Cliente {
     private String email;
 
 
-    @Column(name="nome" , length = 100,  nullable =  false  )
+    @Column(name="cidade" , length = 100,  nullable =  false  )
     private String cidade;
 
 

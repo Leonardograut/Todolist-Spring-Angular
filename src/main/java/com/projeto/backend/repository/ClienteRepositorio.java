@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.projeto.backend.model.Cliente;
 
 @Repository
-public interface Repositorio  extends JpaRepository <Cliente , Long>{
+public interface ClienteRepositorio  extends JpaRepository <Cliente , Long>{
     
 }
