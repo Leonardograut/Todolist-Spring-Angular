@@ -1,5 +1,6 @@
 package com.projeto.backend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,18 +14,22 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long  id;
+    private Long  id;
 
 
-
+    @Column(name="nome" , length = 100,  nullable =  false)
     private String nome;
 
 
+    @Column(name="idade" , length = 15,  nullable =  false  )
     private int idade;
 
+    @Column(name="email" , length = 100,  nullable =  false , unique = true)
     private String email;
 
-    private String ciddade;
+
+    @Column(name="nome" , length = 100,  nullable =  false  )
+    private String cidade;
 
 
 
@@ -62,12 +67,12 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getCiddade() {
-        return ciddade;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setCiddade(String ciddade) {
-        this.ciddade = ciddade;
+    public void setCidade(String ciddade) {
+        this.cidade = ciddade;
     }
 
 
@@ -77,12 +82,12 @@ public class Cliente {
     }
 
     
-    public Cliente(long id, String nome, int idade, String email, String ciddade) {
+    public Cliente(long id, String nome, int idade, String email, String cidade) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.email = email;
-        this.ciddade = ciddade;
+        this.cidade = cidade;
     }
 
 
