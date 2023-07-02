@@ -29,6 +29,13 @@ export class PrincipalComponent {
      .subscribe(retorno =>  this.clientes = retorno);
   }
 
+
+cadastrar():void{
+  this.service.cadastrar(this.cliente)
+  .subscribe(retorno=>{this.clientes.push(retorno);})
+}
+
+
   ngOnInit(){
     this.selecionar();  
   }
