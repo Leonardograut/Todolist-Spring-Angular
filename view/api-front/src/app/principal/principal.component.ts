@@ -10,10 +10,14 @@ import { ClienteService } from '../servico/cliente.service';
 export class PrincipalComponent {
 
 
+  cliente = new Cliente();
+
+
   btnCadastro:boolean = true; 
 
   
   clientes:Cliente[]=[];
+
 
 
   constructor(private service:ClienteService){}
