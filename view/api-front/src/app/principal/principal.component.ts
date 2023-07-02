@@ -32,7 +32,14 @@ export class PrincipalComponent {
 
 cadastrar():void{
   this.service.cadastrar(this.cliente)
-  .subscribe(retorno=>{this.clientes.push(retorno);})
+  .subscribe(retorno=>{
+    
+    this.clientes.push(retorno);
+  
+    this.cliente = new Cliente();
+
+    alert('Cliente Cadastrado com sucesso!')
+  })
 }
 
 
