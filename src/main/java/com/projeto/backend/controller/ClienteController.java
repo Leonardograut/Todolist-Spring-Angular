@@ -20,7 +20,6 @@ import com.projeto.backend.service.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")
-
 public class ClienteController {
     
 

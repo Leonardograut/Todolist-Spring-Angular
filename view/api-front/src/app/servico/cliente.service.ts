@@ -23,5 +23,13 @@ export class ClienteService {
     return this.http.post<Cliente>(this.url,obj);
   }
 
+
+
+  editar(obj:Cliente):Observable<Cliente>{
+
+    const url = `${this.url}${obj.id}`; 
+
+    return this.http.put<Cliente>(url,obj)
+  }
   
 }

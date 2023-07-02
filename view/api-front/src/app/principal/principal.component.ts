@@ -58,6 +58,32 @@ selecionarCliente(posicao:number):void{
 
 
 
+
+ editar():void{
+  this.service.editar(this.cliente)
+  .subscribe(retorno =>{
+ 
+
+    let posicao = this.clientes.findIndex(obj =>{
+
+      return obj.id == retorno.id;
+
+    });
+
+    this.clientes[posicao] = retorno;
+  
+    this.cliente = new Cliente();
+
+    this.btnCadastro = true;
+
+    this.tabela = true;
+
+    alert("Cliente alterado com Sucesso");
+
+  })
+ }
+
+
   ngOnInit(){
     this.selecionar();  
   }
