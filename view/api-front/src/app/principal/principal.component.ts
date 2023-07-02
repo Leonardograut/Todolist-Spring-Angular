@@ -19,6 +19,8 @@ export class PrincipalComponent {
   clientes:Cliente[]=[];
 
 
+  tabela:boolean =true;
+
 
   constructor(private service:ClienteService){}
 
@@ -39,8 +41,21 @@ cadastrar():void{
     this.cliente = new Cliente();
 
     alert('Cliente Cadastrado com sucesso!')
+ 
+    
   })
 }
+
+
+selecionarCliente(posicao:number):void{
+
+  this.cliente = this.clientes[posicao];
+
+  this.btnCadastro = false;
+
+  this.tabela = false;
+}
+
 
 
   ngOnInit(){

@@ -30,7 +30,7 @@
     <!-- <h1>{{cliente | json}}</h1> -->
 
 
-    <table class="table " >
+    <table class="table "  *ngIf="tabela">
 
 
         <thead>
@@ -54,7 +54,7 @@
                 <td >{{c.email}}</td>
                 <td >{{c.cidade}}</td>
 
-                <td><button class="btn btn-success">Selecionar</button></td>
+                <td><button class="btn btn-success" (click)="selecionarCliente(i)">Selecionar</button></td>
             </tr>
         </tbody>
     </table>
