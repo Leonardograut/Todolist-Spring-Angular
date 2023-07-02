@@ -1,45 +1,60 @@
-
-
-<form >
-
-
-
-<img src="assets/like.gif" >
-<input type="text" placeholder="Nome" class="form-control">
-<input type="number" placeholder="Idade" class="form-control">
-<input type="text" placeholder="Email" class="form-control">
-<input type="text" placeholder="Cidade" class="form-control">
-
-<input type="button" value="Cadastrar"   *ngIf="btnCadastro"   class=" btn btn-primary">
-<input type="button" value="Alterar"     *ngIf="!btnCadastro"    class=" btn btn-warning">
-<input type="button" value="Remover"     *ngIf="!btnCadastro"    class=" btn btn-danger">
-<input type="button" value="Cancelar"    *ngIf="!btnCadastro"    class=" btn btn-secondary">
+<body>
 
 
 
 
 
-</form>
+    <form>
 
 
-<table class="table">
+
+        <img src="assets/tom.png">
+        <input type="text" placeholder="Nome" class="form-control">
+        <input type="number" placeholder="Idade" class="form-control">
+        <input type="text" placeholder="Email" class="form-control">
+        <input type="text" placeholder="Cidade" class="form-control">
+
+        <input type="button" value="Cadastrar" *ngIf="btnCadastro" class=" btn btn-primary">
+        <input type="button" value="Alterar" *ngIf="!btnCadastro" class=" btn btn-warning">
+        <input type="button" value="Remover" *ngIf="!btnCadastro" class=" btn btn-danger">
+        <input type="button" value="Cancelar" *ngIf="!btnCadastro" class=" btn btn-secondary">
 
 
-    <thead >
-    <tr>
-    
-        <th>#</th>
-        <th>Nome</th>
-        <th>Idade</th>
-        <th>Email</th>
-        <th>Cidade</th>
-        <th>Selecionar</th>
-    
-    </tr>
-    
-    </thead>
-    <tbody></tbody>
+
+
+
+    </form>
+
+
+    <table class="table " >
+
+
+        <thead>
+            <tr class="table-secondary">
+
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>Cidade</th>
+                <th>Selecionar</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of clientes; index as i" class="table-secondary"  >
+                <td>{{i+1}}</td>
+                <td>{{c.nome}}</td>
+                <td>{{c.idade}}</td>
+                <td >{{c.email}}</td>
+                <td >{{c.cidade}}</td>
+
+                <td><button class="btn btn-success">Selecionar</button></td>
+            </tr>
+        </tbody>
     </table>
 
 
 
+</body>

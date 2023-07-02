@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../model/Cliente';
-import { ClienteService } from '../service/cliente.service';
+import { ClienteService } from '../servico/cliente.service';
 
 @Component({
   selector: 'app-principal',
@@ -12,13 +12,20 @@ export class PrincipalComponent {
 
   btnCadastro:boolean = true; 
 
+  
+  clientes:Cliente[]=[];
+
 
   constructor(private service:ClienteService){}
 
-  clientes:Cliente[]=[];
+ 
 
   selecionar():void{
      this.service.selecionar()
-     .subscribe(retorno =>this.clientes = retorno);
+     .subscribe(retorno =>  this.clientes = retorno);
+  }
+
+  ngOnInit(){
+    this.selecionar();  
   }
 }
