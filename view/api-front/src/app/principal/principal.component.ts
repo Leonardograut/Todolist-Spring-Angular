@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../model/Cliente';
 import { ClienteService } from '../servico/cliente.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-principal',
@@ -82,6 +83,42 @@ selecionarCliente(posicao:number):void{
 
   })
  }
+
+
+remover():void{
+    this.service.remover(this.cliente.id)
+    .subscribe(retorno=>{
+      
+
+      let posicao = this.clientes.findIndex(obj=>{
+      return obj.id == this.cliente.id;
+
+      })
+
+    
+
+      this.clientes.splice(posicao,1);
+
+     
+      this.cliente = new Cliente();
+
+
+      this.btnCadastro = true;
+
+
+      this.tabela = true;
+
+
+      alert("Cliente removido com sucesso! ")
+
+
+
+
+
+    })
+}
+
+
 
 
   ngOnInit(){
